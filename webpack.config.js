@@ -30,13 +30,13 @@ const config = {
       icons: [
         {
           src: path.resolve(
-           
-            "public/icons/icon-512x512.png"
+           __dirname,
+            "/icons/icon-512x512.png"
             ),
           // the plugin will generate an image for each size
           // included in the size array
           size: [72, 96, 128, 144, 152, 192, 384, 512],
-          type: "image/png",
+          
         }
 
       ]
