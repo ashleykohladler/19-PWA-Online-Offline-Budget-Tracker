@@ -1,20 +1,19 @@
+const CACHE_NAME = "my-code";
+const DATA_CACHE_NAME = "my-code-2";
+
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
-  "/assets/css/style.css",
-  "/assets/js/loadPosts.js",
-  "/assets/images/Angular-icon.png",
-  "/assets/images/React-icon.png",
-  "/assets/images/Vue.js-icon.png",
+  "/style.css",
+  "/index.js",
+  "/indexedDB.js",
   "/manifest.webmanifest",
-  "/public/assets/images/icons/icon-192x192.png",
-  "/public/assets/images/icons/icon-512x512.png",
+  "/service-worker.js",
+  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png",
 ];
 
-const CACHE_NAME = "static-cache-v2";
-const DATA_CACHE_NAME = "data-cache-v1";
-
-// install
+//install
 self.addEventListener("install", function(evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -25,6 +24,15 @@ self.addEventListener("install", function(evt) {
 
   self.skipWaiting();
 });
+
+// self.addEventListener("install", (event) => {
+//   event.waitUntil(
+//       caches
+//           .open(CACHE_NAME)
+//           .then((cache) => cache.addAll(FILES_TO_CACHE))
+//           .then(self.skipWaiting())
+//   );
+// });
 
 self.addEventListener("activate", function(evt) {
   evt.waitUntil(
