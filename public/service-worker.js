@@ -1,17 +1,18 @@
-const CACHE_NAME = "my-code";
-const DATA_CACHE_NAME = "my-code-2";
+
 
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
-  "/style.css",
+  "/styles.css",
   "/index.js",
-  "/indexedDB.js",
+  "/indexedDb.js",
   "/manifest.webmanifest",
-  "/service-worker.js",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
 ];
+
+const CACHE_NAME = "my-code";
+const DATA_CACHE_NAME = "my-code-2";
 
 //install
 self.addEventListener("install", function(evt) {
@@ -84,4 +85,5 @@ self.addEventListener("fetch", function(evt) {
     })
   );
 });
+
 
